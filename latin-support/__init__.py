@@ -1,10 +1,11 @@
 #
 # Latin Support for Anki 2.1
 #
-# Copyright Péter Dimitrov 2018
+# Copyright Péter Dimitrov 2018-2020
 # License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 #
 # 2018-12-27: Initial version
+# 2020-09-06: Fix crash with Anki 2.1.33
 #
 
 # Adds support for the special latin characters with macron:
@@ -25,7 +26,6 @@ def onFocusLost(flag, n, fidx):
         if value != updatedValue:
             n[name] = updatedValue
             flag = True
-    n.flush()
     return flag
 
 def replaceWithMacrons(value):
